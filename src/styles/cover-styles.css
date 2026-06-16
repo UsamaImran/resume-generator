@@ -1,0 +1,61 @@
+/* ===== COVER LETTER-SPECIFIC STYLES ===== */
+.header {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 15px;
+}
+
+body {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 0 30px;
+  line-height: 1.6;
+}
+
+.recipient {
+  margin: 20px 0 10px 0;
+}
+
+.recipient p {
+  margin: 2px 0;
+}
+
+.subject {
+  font-weight: 600;
+  margin: 15px 0 10px 0;
+  color: #000000;
+}
+
+.body p {
+  margin-bottom: 14px;
+  font-size: 11.5pt; /* INCREASED from 11pt */
+  text-align: left;
+}
+
+.paragraph-title {
+  font-weight: 700;
+  font-size: 11.5pt; /* INCREASED from 11pt */
+  margin-bottom: 2px;
+  margin-top: 6px;
+  color: #000000;
+  text-align: left;
+}
+
+.closing {
+  margin-top: 30px;
+}
+
+.closing p {
+  margin: 4px 0;
+}
+
+.signature {
+  margin-top: 40px;
+  padding-top: 10px;
+  border-top: 1px solid #000000;
+}
+
+.signature p {
+  font-weight: 600;
+  font-size: 12pt;
+}

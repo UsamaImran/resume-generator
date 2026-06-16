@@ -1,0 +1,21 @@
+{
+  "name": "Your Name",
+  "email": "your.email@example.com",
+  "phone": "+00 000 000 0000",
+  "linkedin": "https://www.linkedin.com/in/yourprofile/",
+  "portfolio": "https://your-portfolio.com/",
+  "github": "https://github.com/yourusername",
+  "npm": "https://www.npmjs.com/~yourusername",
+  "location": "Your City, Country",
+  "targeting": "Open to relocation",
+  "recipient_name": "Hiring Manager",
+  "company_name": "Target Company",
+  "company_address": "City, Country",
+  "job_title": "Senior Software Engineer",
+  "paragraphs": [
+    {
+      "title": "Why I'm Interested",
+      "text": "I am writing to express my interest..."
+    }
+  ]
+}

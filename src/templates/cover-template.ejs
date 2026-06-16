@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style><%- styles %></style>
+</head>
+<body>
+
+  <!-- ===== REUSABLE HEADER (Loaded from partials) ===== -->
+  <%- include('partials/header.ejs', { 
+    name, 
+    location, 
+    phone, 
+    email, 
+    linkedin, 
+    portfolio, 
+    github, 
+    targeting 
+  }) %>
+
+  <!-- ===== COVER LETTER BODY ===== -->
+  <div class="recipient">
+    <p><strong><%= recipient_name %></strong></p>
+    <p><%= company_name %></p>
+    <% if (company_address) { %>
+      <p><%= company_address %></p>
+    <% } %>
+  </div>
+
+  <p><strong>Date:</strong> <%= new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></p>
+
+  <div class="subject">
+    Re: Application for <%= job_title %> at <%= company_name %>
+  </div>
+
+  <div class="body">
+    <% paragraphs.forEach(function(p) { %>
+      <% if (p.title && p.title.trim() !== '') { %>
+        <h3 class="paragraph-title"><%= p.title %></h3>
+      <% } %>
+      <p><%= p.text %></p>
+    <% }); %>
+  </div>
+
+  <div class="closing">
+    <p>Sincerely,</p>
+    <div class="signature">
+      <p><%= name %></p>
+    </div>
+  </div>
+
+</body>
+</html>

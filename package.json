@@ -1,0 +1,21 @@
+{
+  "name": "resume-generator",
+  "version": "1.0.0",
+  "description": "TypeScript Node.js tool that converts AI-generated JSON into beautifully formatted, ATS-safe Resume and Cover Letter PDFs. Organizes outputs by company and prevents overwrites.",
+  "scripts": {
+    "resume": "npx ts-node src/generators/resume-generator.ts",
+    "cover": "npx ts-node src/generators/cover-generator.ts",
+    "both": "npm run resume && npm run cover"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "puppeteer": "^22.0.0"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/node": "^20.0.0",
+    "@types/puppeteer": "^7.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,0 +1,22 @@
+# Node Modules
+node_modules/
+dist/
+
+# Personal Data (DO NOT PUSH THESE!)
+input.json
+cover-input.json
+
+# Generated PDFs (you don't need to track these in git)
+*.pdf
+merkle/
+super/
+general/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.log
