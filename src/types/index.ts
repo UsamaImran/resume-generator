@@ -16,6 +16,17 @@ export interface ExperienceItem {
   bullets: string[];
 }
 
+export interface EducationItem {
+  institution: string;
+  degree: string;
+  fieldOfStudy: string;
+  startDate: string;
+  endDate?: string;
+  gpa?: number;
+  honors?: string[];
+  courses?: string[];
+}
+
 export interface ResumeData {
   name: string;
   email: string;
@@ -32,7 +43,7 @@ export interface ResumeData {
   summary: string;
   skills: SkillCategory[];
   experience: ExperienceItem[];
-  education: string;
+  education: EducationItem[];
   npmPackages?: string[];
 }
 

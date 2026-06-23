@@ -70,8 +70,17 @@
     </ul>
   <% } %>
 
-  <h2>Education</h2>
-  <div class="education"><%= education %></div>
+    <h2>Education</h2>
+  <div class="education">
+    <% education.forEach(function(edu) { %>
+      <%= edu.degree %> <%= edu.fieldOfStudy ? `in ${edu.fieldOfStudy}` : '' %>,
+      <%= edu.institution %>
+      <% if (edu.startDate || edu.endDate) { %>
+        (<%= edu.startDate %><%= edu.endDate ? ` - ${edu.endDate}` : '' %>)
+      <% } %>
+      <% if (edu.gpa) { %>, GPA: <%= edu.gpa %><% } %>
+    <% }); %>
+  </div>
 
 </body>
 </html>
