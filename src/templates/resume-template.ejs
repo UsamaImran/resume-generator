@@ -25,28 +25,36 @@
 
   <h2>Technical Skills</h2>
   <% skills.forEach(function(cat) { %>
-    <div class="skill-row">
-      <strong><%= cat.category %>: </strong>
-      <%
-        var skillTexts = cat.items.map(function(item) {
-          if (item.highlight) {
-            return '<strong>' + item.name + '</strong>';
-          } else {
-            return item.name;
-          }
-        });
-      %>
-      <%- skillTexts.join(', ') %>
+    <div class="skill-block">
+      <div class="skill-category-line">
+        <span class="skill-category-label"><%= cat.category %>:</span>
+        <span class="skill-list">
+          <%
+            var skillTexts = cat.items.map(function(item) {
+              if (item.highlight) {
+                return '<span class="skill-item"><strong>' + item.name + '</strong></span>';
+              } else {
+                return '<span class="skill-item">' + item.name + '</span>';
+              }
+            });
+          %>
+          <%- skillTexts.join('') %>
+        </span>
+      </div>
     </div>
   <% }); %>
 
   <h2>Work Experience</h2>
   <% experience.forEach(function(job) { %>
     <div class="job">
-      <div class="job-main">
-        <%= job.title %> <%= job.company %> — <%= job.location %>
+      <div class="job-header">
+        <span class="job-title-company"><%= job.title %> </span>
+        <span class="job-title-company"> <%= job.company %></span>
       </div>
-      <div class="job-date"><%= job.date %></div>
+      <div class="job-header">
+      <div class="job-date"><%= job.date %> </div>
+      <div class="job-date"><%= job.location %></div>
+      </div>
       <ul>
         <% job.bullets.forEach(function(b) { %>
           <li><%- b %></li>
@@ -70,7 +78,7 @@
     </ul>
   <% } %>
 
-    <h2>Education</h2>
+  <h2>Education</h2>
   <div class="education">
     <% education.forEach(function(edu) { %>
       <%= edu.degree %> <%= edu.fieldOfStudy ? `in ${edu.fieldOfStudy}` : '' %>,

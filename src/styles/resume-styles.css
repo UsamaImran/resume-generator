@@ -7,6 +7,7 @@ body {
   max-width: 850px;
   margin: 40px auto;
   padding: 0 30px;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 .headline {
@@ -17,41 +18,122 @@ body {
 }
 
 .summary {
-  font-size: 11.5pt; /* INCREASED from 11pt */
+  font-size: 11.5pt;
   margin-bottom: 14px;
   padding-left: 12px;
   border-left: 3px solid #000000;
   text-align: left;
 }
 
+/* ===== SKILLS WITH IMPROVED INDENTATION ===== */
 .skill-row {
-  font-size: 11pt; /* INCREASED from 10.5pt */
-  margin-bottom: 1px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  font-size: 11pt;
+  margin-bottom: 4px;
+  line-height: 1.6;
 }
 
-.skill-row strong {
+.skill-row .skill-category {
   font-weight: 600;
+  min-width: 180px;
+  flex-shrink: 0;
+  padding-right: 10px;
 }
 
+.skill-row .skill-items {
+  flex: 1;
+  padding-left: 0;
+  display: inline;
+}
+
+.skill-row .skill-items .skill-item {
+  display: inline;
+}
+
+.skill-row .skill-items .skill-item::after {
+  content: ", ";
+}
+
+.skill-row .skill-items .skill-item:last-child::after {
+  content: "";
+}
+
+/* Alternative: Better approach for multi-line skills with indentation */
+.skill-block {
+  margin-bottom: 6px;
+}
+
+.skill-block .skill-category-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.skill-block .skill-category-label {
+  font-weight: 600;
+  min-width: 180px;
+  flex-shrink: 0;
+  font-size: 11pt;
+  padding-right: 8px;
+}
+
+.skill-block .skill-list {
+  flex: 1;
+  font-size: 11pt;
+  line-height: 1.6;
+  padding-left: 0;
+  margin: 0;
+}
+
+.skill-block .skill-list .skill-item {
+  display: inline;
+}
+
+.skill-block .skill-list .skill-item::after {
+  content: ", ";
+}
+
+.skill-block .skill-list .skill-item:last-child::after {
+  content: "";
+}
+
+/* ===== WORK EXPERIENCE ===== */
 .job {
   margin-bottom: 14px;
 }
 
-.job-main {
+.job-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
   font-weight: 700;
-  font-size: 11.5pt; /* INCREASED from 11pt */
+  font-size: 11.5pt;
+}
+
+.job-title-company {
+  font-weight: 700;
+}
+
+.job-location {
+  font-weight: 400;
+  font-size: 11pt;
+  color: #000000;
 }
 
 .job-date {
-  font-size: 11pt; /* INCREASED from 10.5pt */
+  font-size: 9pt;
   font-weight: 400;
-  color: #000000;
+  color: lightslategray;
   margin-bottom: 3px;
   font-style: italic;
+  margin-top: 1px;
 }
 
 .education {
-  font-size: 11.5pt; /* INCREASED from 11pt */
+  font-size: 11.5pt;
   margin-top: 4px;
   font-weight: 700;
   color: #000000;
@@ -65,6 +147,16 @@ body {
 }
 .open-source-list li {
   margin-bottom: 1px;
-  font-size: 11pt; /* INCREASED from 10.5pt */
+  font-size: 11pt;
   text-align: left;
+}
+
+/* ===== HEADINGS ===== */
+h2 {
+  font-size: 13pt;
+  font-weight: 700;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 2px;
 }
