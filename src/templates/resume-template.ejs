@@ -78,17 +78,27 @@
     </ul>
   <% } %>
 
-  <h2>Education</h2>
-  <div class="education">
-    <% education.forEach(function(edu) { %>
-      <%= edu.degree %> <%= edu.fieldOfStudy ? `in ${edu.fieldOfStudy}` : '' %>,
-      <%= edu.institution %>
-      <% if (edu.startDate || edu.endDate) { %>
-        (<%= edu.startDate %><%= edu.endDate ? ` - ${edu.endDate}` : '' %>)
-      <% } %>
-      <% if (edu.gpa) { %>, GPA: <%= edu.gpa %><% } %>
-    <% }); %>
-  </div>
+<h2>Education</h2>
+<div class="education">
+  <% education.forEach(function(edu) { %>
+    <div class="education-item">
+      <div class="education-left">
+        <div class="education-degree"><%= edu.degree %><%= edu.fieldOfStudy ? ` in ${edu.fieldOfStudy}` : '' %>,</div>
+        <div class="education-date">
+          <% if (edu.startDate || edu.endDate) { %>
+            <%= edu.startDate %><%= edu.endDate ? ` - ${edu.endDate}` : '' %>
+          <% } %>
+        </div>
+      </div>
+      <div class="education-right">
+        <div class="education-institution"><%= edu.institution %></div>
+        <div class="education-gpa">
+          <% if (edu.gpa) { %>GPA: <%= edu.gpa %><% } %>
+        </div>
+      </div>
+    </div>
+  <% }); %>
+</div>
 
 </body>
 </html>

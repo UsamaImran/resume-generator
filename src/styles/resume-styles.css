@@ -25,66 +25,31 @@ body {
   text-align: left;
 }
 
-/* ===== SKILLS WITH IMPROVED INDENTATION ===== */
-.skill-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  font-size: 11pt;
-  margin-bottom: 4px;
-  line-height: 1.6;
-}
-
-.skill-row .skill-category {
-  font-weight: 600;
-  min-width: 180px;
-  flex-shrink: 0;
-  padding-right: 10px;
-}
-
-.skill-row .skill-items {
-  flex: 1;
-  padding-left: 0;
-  display: inline;
-}
-
-.skill-row .skill-items .skill-item {
-  display: inline;
-}
-
-.skill-row .skill-items .skill-item::after {
-  content: ", ";
-}
-
-.skill-row .skill-items .skill-item:last-child::after {
-  content: "";
-}
-
-/* Alternative: Better approach for multi-line skills with indentation */
+/* ===== SKILLS WITH FIXED WIDTH & PROPER ALIGNMENT ===== */
 .skill-block {
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .skill-block .skill-category-line {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
+  font-size: 11pt;
+  line-height: 1.6;
 }
 
 .skill-block .skill-category-label {
   font-weight: 600;
-  min-width: 180px;
+  width: 180px; /* Fixed width for all categories */
   flex-shrink: 0;
-  font-size: 11pt;
-  padding-right: 8px;
+  padding-right: 10px;
+  display: inline-block;
 }
 
 .skill-block .skill-list {
   flex: 1;
-  font-size: 11pt;
-  line-height: 1.6;
-  padding-left: 0;
-  margin: 0;
+  display: inline;
+  word-wrap: break-word;
 }
 
 .skill-block .skill-list .skill-item {
@@ -159,4 +124,57 @@ h2 {
   margin-bottom: 6px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 2px;
+}
+
+/* ===== EDUCATION WITH PROPER SPACE-BETWEEN ===== */
+.education {
+  margin-top: 4px;
+}
+
+.education-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.education-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.education-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.education-degree {
+  font-weight: 700;
+  font-size: 11.5pt;
+  color: #000000;
+}
+
+.education-institution {
+  font-weight: 700;
+  font-size: 11.5pt;
+  color: #000000;
+}
+
+.education-date {
+  font-weight: 400;
+  color: lightslategray;
+  font-style: italic;
+  font-size: 9pt;
+  margin-top: 1px;
+}
+
+.education-gpa {
+  font-weight: 400;
+  color: lightslategray;
+  font-style: italic;
+  font-size: 9pt;
+  margin-top: 1px;
 }
