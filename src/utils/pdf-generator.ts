@@ -9,19 +9,12 @@ import {
 } from "./file-helpers";
 
 export interface PDFOptions {
-  /** Input JSON data (ResumeData or CoverData) */
   data: any;
-  /** Path to the CSS file (resume-styles.css or cover-styles.css) */
   cssPath: string;
-  /** Path to the EJS template file */
   templatePath: string;
-  /** Company name for folder naming */
   companyName: string;
-  /** Job title for filename */
   jobTitle: string;
-  /** Suffix: 'resume' or 'cover' */
   suffix: "resume" | "cover";
-  /** Page margins (default: resume margins) */
   margins?: {
     top?: string;
     bottom?: string;
@@ -62,6 +55,7 @@ export async function generatePDF(options: PDFOptions): Promise<string> {
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
+
   const page = await browser.newPage();
 
   // 5. Set content
@@ -70,7 +64,7 @@ export async function generatePDF(options: PDFOptions): Promise<string> {
     timeout: 0,
   });
 
-  // 6. Determine output directory and build full path
+  // 6. Determine output directory
   const outputDirName = getOutputDirectory(companyName);
   const outputDir = path.resolve(__dirname, "../../", outputDirName);
 
@@ -84,7 +78,11 @@ export async function generatePDF(options: PDFOptions): Promise<string> {
   let outputPath = path.resolve(outputDir, fileName);
   outputPath = getUniqueFilePath(outputPath);
 
-  // 9. Generate PDF
+  // 9. Save the JSON that generated this PDF
+  const jsonPath = outputPath.replace(/\.pdf$/i, ".json");
+  fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2), "utf8");
+
+  // 10. Generate PDF
   await page.pdf({
     path: outputPath,
     format: "A4",
@@ -97,11 +95,12 @@ export async function generatePDF(options: PDFOptions): Promise<string> {
     printBackground: true,
   });
 
-  // 10. Clean up
+  // 11. Clean up
   await browser.close();
 
   console.log(
     `✅ ${path.basename(outputPath)} generated successfully in ${outputDirName}/`,
   );
+
   return outputPath;
 }
