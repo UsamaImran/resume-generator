@@ -1,0 +1,31 @@
+@page { size: Letter; margin: 0.3in 0.6in; }
+* { box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; font-size: 8.9pt; line-height: 1.26; }
+h1 { font-size: 18pt; margin: 0 0 1px 0; letter-spacing: 0.3px; color: #10233f; }
+.headline { font-size: 10pt; color: #2a5a8c; font-weight: 600; margin-bottom: 3px; }
+.contact { font-size: 8.5pt; color: #444; margin-bottom: 2px; }
+.contact a { color: #2a5a8c; text-decoration: none; }
+.targeting { font-size: 8.5pt; color: #666; font-style: italic; margin-top: 2px; }
+.section-title { font-size: 10pt; color: #10233f; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1.3px solid #2a5a8c; padding-bottom: 2px; margin-top: 5px; margin-bottom: 2px; font-weight: 700; break-after: avoid; page-break-after: avoid; }
+.summary { text-align: justify; margin-bottom: 2px; }
+.job { margin-bottom: 4px; }
+.job-header { display: flex; justify-content: space-between; align-items: baseline; }
+.job-title { font-weight: 700; font-size: 9.8pt; color: #10233f; }
+.job-company { font-weight: 600; color: #2a5a8c; }
+.job-meta { font-size: 8.4pt; color: #555; text-align: right; white-space: nowrap; }
+ul.bullets { margin: 1.5px 0 2px 0; padding-left: 14px; }
+ul.bullets li { margin-bottom: 1px; text-align: justify; }
+.job-stack { font-size: 8.3pt; color: #2a5a8c; margin-top: 1px; }
+.job-stack b { color: #444; font-weight: 600; }
+table.skills-table { width: 100%; border-collapse: collapse; }
+table.skills-table td { width: 50%; vertical-align: top; padding: 0 18px 2.5px 0; }
+.skill-cat { font-weight: 700; color: #10233f; }
+.skill-cat span.items { font-weight: 400; color: #1a1a1a; }
+.os-item { margin-bottom: 2.5px; }
+.os-name { font-weight: 700; color: #10233f; }
+.os-name a { color: #10233f; text-decoration: none; }
+.os-tag { font-size: 8.4pt; color: #2a5a8c; font-weight: 600; }
+.os-desc { margin-top: 1px; text-align: justify; }
+.edu-row { display: flex; justify-content: space-between; }
+.edu-degree { font-weight: 700; color: #10233f; }
+.edu-meta { font-size: 8.7pt; color: #555; }
