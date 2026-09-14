@@ -19,8 +19,8 @@ h1 { font-size: 18pt; margin: 0 0 1px 0; letter-spacing: 0.3px; color: #10233f; 
 .job-stack-label { font-weight: 700; color: #10233f; }
 ul.bullets { margin: 1.5px 0 2px 0; padding-left: 14px; }
 ul.bullets li { margin: 0 0 1px 0; font-size: 8.9pt; line-height: 1.26; text-align: justify; }
-table.skills-table { width: 100%; border-collapse: collapse; }
-table.skills-table td { width: 50%; vertical-align: top; padding: 0 18px 2.5px 0; }
+.skills-list { display: flex; flex-wrap: wrap; width: 100%; }
+.skill-item { flex: 0 0 50%; width: 50%; vertical-align: top; padding: 0 18px 2.5px 0; }
 .skill-cat { font-weight: 700; color: #10233f; }
 .skill-cat span.items { font-weight: 400; color: #1a1a1a; }
 .os-item { margin-bottom: 2.5px; }
