@@ -13,6 +13,7 @@ export interface ExperienceItem {
   company: string;
   location: string;
   date: string;
+  stack?: string[];
   bullets: string[];
 }
 
