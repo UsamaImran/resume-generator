@@ -5,7 +5,7 @@ body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; font-si
 h1 { font-size: 18pt; margin: 0 0 1px 0; letter-spacing: 0.3px; color: #10233f; }
 .contact { font-size: 8.5pt; color: #444; margin-bottom: 2px; }
 .contact a { color: #2a5a8c; text-decoration: none; }
-.targeting { font-size: 8.5pt; color: #666; font-style: italic; margin-top: 2px; }
+.targeting { font-size: 8.5pt; color: #666; font-style: italic; font-weight: 400; margin-top: 2px; }
 .section-title { font-size: 10pt; color: #10233f; text-transform: none; letter-spacing: 0.2px; border-bottom: 1.3px solid #2a5a8c; padding-bottom: 4px; margin-top: 14px; margin-bottom: 12px; font-weight: 700; }
 .recipient { margin-bottom: 14px; }
 .recipient div { font-size: 9.5pt; margin-bottom: 1px; }
