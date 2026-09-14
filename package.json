@@ -5,7 +5,7 @@
   "scripts": {
     "resume": "npx ts-node src/generators/resume-generator.ts",
     "cover": "npx ts-node src/generators/cover-generator.ts",
-    "both": "npm run resume && npm run cover"
+    "both": "npx ts-node src/generators/both-generator.ts"
   },
   "dependencies": {
     "ejs": "^3.1.9",
