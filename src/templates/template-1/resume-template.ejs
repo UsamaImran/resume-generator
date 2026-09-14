@@ -14,8 +14,10 @@
   <% }); %>
   <h2>Work Experience</h2>
   <% experience.forEach(function(job) { %>
-    <div class="job"><div class="job-header"><span class="job-title-company"><%= job.title %> </span><span class="job-title-company"> <%= job.company %></span></div>
+    <div class="job">
+      <div class="job-header"><span class="job-title-company"><%= job.title %> </span><span class="job-title-company"> <%= job.company %></span></div>
       <div class="job-header"><div class="job-date"><%= job.date %></div><div class="job-date"><%= job.location %></div></div>
+      <% if (job.stack?.length) { %><div class="job-stack"><strong>Stack:</strong> <%= job.stack.join(', ') %></div><% } %>
       <ul><% job.bullets.forEach(function(b) { %><li><%- b %></li><% }); %></ul>
     </div>
   <% }); %>
