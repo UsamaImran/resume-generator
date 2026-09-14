@@ -1,6 +1,7 @@
 @page { size: Letter; margin: 0.3in 0.6in; }
 * { box-sizing: border-box; }
 body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; font-size: 8.9pt; line-height: 1.26; }
+.header { text-align: left; }
 h1 { font-size: 18pt; margin: 0 0 1px 0; letter-spacing: 0.3px; color: #10233f; }
 .headline { font-size: 10pt; color: #2a5a8c; font-weight: 600; margin-bottom: 3px; }
 .contact { font-size: 8.5pt; color: #444; margin-bottom: 2px; }
