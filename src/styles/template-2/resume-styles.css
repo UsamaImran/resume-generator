@@ -6,7 +6,7 @@ h1 { font-size: 18pt; margin: 0 0 1px 0; letter-spacing: 0.3px; color: #10233f; 
 .headline { font-size: 10pt; color: #2a5a8c; font-weight: 600; margin-bottom: 3px; }
 .contact { font-size: 8.5pt; color: #444; margin-bottom: 2px; }
 .contact a { color: #2a5a8c; text-decoration: none; }
-.targeting { font-size: 8.5pt; color: #666; font-style: italic; margin-top: 2px; }
+.targeting { font-size: 8.5pt; color: #666; font-style: italic; font-weight: 400; margin-top: 2px; }
 .section-title { font-size: 10pt; color: #10233f; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1.3px solid #2a5a8c; padding-bottom: 2px; margin-top: 5px; margin-bottom: 2px; font-weight: 700; break-after: avoid; page-break-after: avoid; }
 .summary { text-align: justify; margin-bottom: 2px; }
 .job { margin-bottom: 4px; break-inside: avoid; page-break-inside: avoid; }
