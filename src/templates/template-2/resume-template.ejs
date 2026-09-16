@@ -22,6 +22,13 @@
         <div class="project-header">
           <span class="project-name"><%= project.name %></span>
         </div>
+        <% if (project.repoUrl || project.liveUrl) { %>
+          <div class="project-links">
+            <% if (project.repoUrl) { %><a href="<%= project.repoUrl %>">Repository</a><% } %>
+            <% if (project.repoUrl && project.liveUrl) { %><span class="project-link-separator"> · </span><% } %>
+            <% if (project.liveUrl) { %><a href="<%= project.liveUrl %>">Live Demo</a><% } %>
+          </div>
+        <% } %>
         <% if (project.stack?.length) { %><div class="project-stack"><span class="project-stack-label">Stack:</span> <%= project.stack.join(', ') %></div><% } %>
         <ul class="bullets"><% project.bullets.forEach(function(b) { %><li><%- b %></li><% }); %></ul>
       </div>
