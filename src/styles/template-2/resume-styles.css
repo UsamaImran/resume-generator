@@ -12,7 +12,7 @@ h1 { font-size: 18pt; margin: 0 0 1px 0; letter-spacing: 0.3px; color: #10233f; 
 .summary { text-align: left; margin-bottom: 2px; }
 .job { margin-bottom: 4px; break-inside: avoid; page-break-inside: avoid; }
 .job-header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-.job-heading { min-width: 0; font-size: 9.8pt; line-height: 1.2; display: flex; justify-content: space-between; width: 100%; }
+.job-heading { min-width: 0; font-size: 9.8pt; line-height: 1.2; display: flex; flex-direction: column; align-items: flex-start; }
 .job-title { font-weight: 700; color: #10233f; }
 .job-company { font-weight: 600; color: #2a5a8c; }
 .job-meta { flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-end; font-size: 8.4pt; line-height: 1.2; color: #555; text-align: right; white-space: nowrap; }
