@@ -10,26 +10,20 @@ export function buildFileName(
   jobTitle: string,
   suffix: string,
 ): string {
-  const base = "Usama_imran";
-  const parts = [base];
-
-  const cleanCompany =
-    company && company.trim() !== "" && company !== "Your Company"
-      ? sanitizeFilename(company.trim())
-      : null;
+  const base = "Usama-Imran";
   const cleanJob =
     jobTitle && jobTitle.trim() !== ""
-      ? sanitizeFilename(jobTitle.trim())
+      ? sanitizeFilename(jobTitle.trim()).replace(/_/g, "-")
       : null;
 
-  if (cleanCompany) parts.push(cleanCompany);
+  const parts = [base];
   if (cleanJob) parts.push(cleanJob);
   parts.push(suffix);
 
-  return parts.join("_") + ".pdf";
+  return parts.join("-") + ".pdf";
 }
 
-// NEW: Determines the output folder based on company name
+// Determines the output folder based on company name
 export function getOutputDirectory(company: string): string {
   const cleanCompany =
     company && company.trim() !== "" && company !== "Your Company"
