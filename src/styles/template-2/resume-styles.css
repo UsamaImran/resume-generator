@@ -20,11 +20,14 @@ h1 { font-size: 18pt; margin: 0 0 1px 0; letter-spacing: 0.3px; color: #10233f; 
 ul.bullets { margin: 1.5px 0 2px 0; padding-left: 14px; }
 ul.bullets li { margin: 0 0 1px 0; font-size: 8.9pt; line-height: 1.26; text-align: justify; }
 .project { margin-bottom: 3px; break-inside: avoid; page-break-inside: avoid; }
-.project-header { line-height: 1.2; }
+.project-header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; line-height: 1.2; }
+.project-title-wrap { min-width: 0; display: flex; align-items: baseline; gap: 4px; }
 .project-name { font-size: 9.8pt; font-weight: 700; color: #10233f; }
-.project-links { font-size: 8.2pt; line-height: 1.2; margin: 0.5px 0 1px; }
-.project-links a { color: #2a5a8c; text-decoration: none; font-weight: 600; }
-.project-link-separator { color: #777; }
+.project-live-link { color: #2a5a8c; text-decoration: none; font-size: 9.5pt; font-weight: 700; }
+.project-live-link:hover { text-decoration: underline; }
+.project-repo-link { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 3px; color: #2a5a8c; text-decoration: none; font-size: 8.2pt; font-weight: 600; }
+.project-repo-link:hover { text-decoration: underline; }
+.github-icon { width: 12px; height: 12px; display: block; }
 .project-stack { font-size: 8.4pt; line-height: 1.25; color: #2a5a8c; margin: 1px 0 1.5px; }
 .project-stack-label { font-weight: 700; color: #10233f; }
 .skills-list { display: flex; flex-wrap: wrap; width: 100%; }
