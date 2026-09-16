@@ -19,6 +19,8 @@ export interface ExperienceItem {
 
 export interface ProjectItem {
   name: string;
+  repoUrl?: string;
+  liveUrl?: string;
   stack?: string[];
   bullets: string[];
 }
