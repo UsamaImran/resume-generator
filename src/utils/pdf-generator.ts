@@ -31,7 +31,6 @@ export async function generatePDF(options: PDFOptions): Promise<string> {
     companyName,
     jobTitle,
     suffix,
-    margins = { top: "20px", bottom: "20px", left: "20px", right: "20px" },
   } = options;
 
   // 1. Load shared CSS
@@ -63,6 +62,7 @@ export async function generatePDF(options: PDFOptions): Promise<string> {
     waitUntil: "domcontentloaded",
     timeout: 0,
   });
+  await page.evaluate(() => document.fonts.ready);
 
   // 6. Determine output directory
   const outputDirName = getOutputDirectory(companyName);
@@ -82,16 +82,10 @@ export async function generatePDF(options: PDFOptions): Promise<string> {
   const jsonPath = outputPath.replace(/\.pdf$/i, ".json");
   fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2), "utf8");
 
-  // 10. Generate PDF
+  // 10. Generate PDF. Page size and margins are owned by the template's @page rule.
   await page.pdf({
     path: outputPath,
-    format: "A4",
-    margin: {
-      top: margins.top || "20px",
-      bottom: margins.bottom || "20px",
-      left: margins.left || "20px",
-      right: margins.right || "20px",
-    },
+    preferCSSPageSize: true,
     printBackground: true,
   });
 

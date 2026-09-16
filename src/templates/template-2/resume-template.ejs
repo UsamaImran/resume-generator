@@ -8,8 +8,14 @@
   <% experience.forEach(function(job) { %>
     <div class="job">
       <div class="job-header">
-        <div class="job-heading"><span class="job-title"><%= job.title %></span><span class="job-company"> <%= job.company %></span></div>
-        <div class="job-meta"><span><%= job.location %></span><span><%= job.date %></span></div>
+        <div class="job-heading">
+          <div><span class="job-title"><%= job.title %></span></div>
+          <div class="job-date"><%= job.date %></div>
+        </div>
+        <div class="job-meta">
+          <div class="job-company"><%= job.company %></div>
+          <div><%= job.location %></div>
+        </div>
       </div>
       <% if (job.stack?.length) { %><div class="job-stack"><span class="job-stack-label">Stack:</span> <%= job.stack.join(', ') %></div><% } %>
       <ul class="bullets"><% job.bullets.forEach(function(b) { %><li><%- b %></li><% }); %></ul>
@@ -36,12 +42,33 @@
       </div>
     <% }); %>
   <% } %>
-  <% if (npmPackages && npmPackages.length > 0) { %><div class="section-title">Open Source</div><% npmPackages.forEach(function(pkg) { var parts = pkg.split(' - '); %><div class="os-item"><span class="os-name"><%= parts[0] %></span><% if (parts.length > 1) { %> — <span class="os-tag">npm package</span><div class="os-desc"><%= parts.slice(1).join(' - ') %></div><% } %></div><% }); %><% } %>
-  <div class="section-title">Skills</div>
-  <div class="skills-list">
-    <% skills.forEach(function(skill) { %>
-      <div class="skill-item"><span class="skill-cat"><%= skill.category %>: </span><span class="items"><%= skill.items.map(function(item) { return item.name; }).join(', ') %></span></div>
+  <% if (npmPackages && npmPackages.length > 0) { %>
+    <div class="section">
+      <div class="section-title">Open Source</div>
+      <% npmPackages.forEach(function(pkg) { var parts = pkg.split(' - '); %><div class="os-item"><span class="os-name"><%= parts[0] %></span><% if (parts.length > 1) { %> — <span class="os-tag">npm package</span><div class="os-desc"><%= parts.slice(1).join(' - ') %></div><% } %></div><% }); %>
+    </div>
+  <% } %>
+  <div class="section">
+    <div class="section-title">Skills</div>
+    <div class="skills-list">
+      <% skills.forEach(function(skill) { %>
+        <div class="skill-item"><span class="skill-cat"><%= skill.category %>: </span><span class="items"><%= skill.items.map(function(item) { return item.name; }).join(', ') %></span></div>
+      <% }); %>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-title">Education</div>
+    <% education.forEach(function(edu) { %>
+      <div class="edu-row">
+        <div class="edu-heading">
+          <div class="edu-degree"><%= edu.degree %><%= edu.fieldOfStudy ? ', ' + edu.fieldOfStudy : '' %></div>
+          <div class="edu-year"><%= edu.startDate %><%= edu.endDate ? ' – ' + edu.endDate : '' %></div>
+        </div>
+        <div class="edu-meta">
+          <div class="edu-institution"><%= edu.institution %></div>
+          <% if (edu.gpa !== undefined && edu.gpa !== null) { %><div class="edu-gpa">GPA: <%= edu.gpa %></div><% } %>
+        </div>
+      </div>
     <% }); %>
   </div>
-  <div class="section-title">Education</div><% education.forEach(function(edu) { %><div class="edu-row"><div class="edu-degree"><%= edu.degree %><%= edu.fieldOfStudy ? ', ' + edu.fieldOfStudy : '' %> — <%= edu.institution %></div><div class="edu-meta"><%= edu.startDate %><%= edu.endDate ? ' – ' + edu.endDate : '' %></div></div><% }); %>
 </body></html>
