@@ -21,6 +21,16 @@
       <ul><% job.bullets.forEach(function(b) { %><li><%- b %></li><% }); %></ul>
     </div>
   <% }); %>
+  <% if (projects && projects.length > 0) { %>
+    <h2>Selected Projects</h2>
+    <% projects.forEach(function(project) { %>
+      <div class="project">
+        <div class="project-header"><span class="project-name"><%= project.name %></span></div>
+        <% if (project.stack?.length) { %><div class="project-stack"><strong>Stack:</strong> <%= project.stack.join(', ') %></div><% } %>
+        <ul><% project.bullets.forEach(function(b) { %><li><%- b %></li><% }); %></ul>
+      </div>
+    <% }); %>
+  <% } %>
   <% if (npmPackages && npmPackages.length > 0) { %><h2>Open Source</h2><ul class="open-source-list"><% npmPackages.forEach(function(pkg) { var parts = pkg.split(' - '); %><li><strong><%= parts[0] %></strong> : <%= parts.slice(1).join(' - ') %></li><% }); %></ul><% } %>
   <h2>Education</h2>
   <div class="education"><% education.forEach(function(edu) { %><div class="education-item"><div class="education-left"><div class="education-degree"><%= edu.degree %><%= edu.fieldOfStudy ? ` in ${edu.fieldOfStudy}` : '' %>,</div><div class="education-date"><% if (edu.startDate || edu.endDate) { %><%= edu.startDate %><%= edu.endDate ? ` - ${edu.endDate}` : '' %><% } %></div></div><div class="education-right"><div class="education-institution"><%= edu.institution %></div><div class="education-gpa"><% if (edu.gpa) { %>GPA: <%= edu.gpa %><% } %></div></div></div><% }); %></div>
