@@ -41,6 +41,10 @@ ul.bullets li { margin: 0 0 1px 0; font-size: 8.9pt; line-height: 1.26; text-ali
 .os-name a { color: #10233f; text-decoration: none; }
 .os-tag { font-size: 8.4pt; color: #2a5a8c; font-weight: 600; }
 .os-desc { margin-top: 1px; text-align: left; }
-.edu-row { display: flex; justify-content: space-between; break-inside: avoid; page-break-inside: avoid; }
-.edu-degree { font-weight: 700; color: #10233f; }
-.edu-meta { font-size: 8.7pt; color: #555; }
+.edu-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; break-inside: avoid; page-break-inside: avoid; }
+.edu-heading { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2; }
+.edu-degree { font-size: 9.8pt; font-weight: 700; color: #10233f; }
+.edu-year { font-size: 8.4pt; color: #555; font-weight: 400; }
+.edu-meta { flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-end; font-size: 8.4pt; line-height: 1.2; color: #555; text-align: right; white-space: nowrap; }
+.edu-institution { font-size: 9.8pt; font-weight: 600; color: #2a5a8c; }
+.edu-gpa { font-size: 8.4pt; color: #555; font-weight: 400; }
