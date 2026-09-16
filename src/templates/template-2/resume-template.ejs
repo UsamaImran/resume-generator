@@ -58,6 +58,17 @@
   </div>
   <div class="section">
     <div class="section-title">Education</div>
-    <% education.forEach(function(edu) { %><div class="edu-row"><div class="edu-degree"><%= edu.degree %><%= edu.fieldOfStudy ? ', ' + edu.fieldOfStudy : '' %> — <%= edu.institution %></div><div class="edu-meta"><%= edu.startDate %><%= edu.endDate ? ' – ' + edu.endDate : '' %></div></div><% }); %>
+    <% education.forEach(function(edu) { %>
+      <div class="edu-row">
+        <div class="edu-heading">
+          <div class="edu-degree"><%= edu.degree %><%= edu.fieldOfStudy ? ', ' + edu.fieldOfStudy : '' %></div>
+          <div class="edu-year"><%= edu.startDate %><%= edu.endDate ? ' – ' + edu.endDate : '' %></div>
+        </div>
+        <div class="edu-meta">
+          <div class="edu-institution"><%= edu.institution %></div>
+          <% if (edu.gpa !== undefined && edu.gpa !== null) { %><div class="edu-gpa">GPA: <%= edu.gpa %></div><% } %>
+        </div>
+      </div>
+    <% }); %>
   </div>
 </body></html>
