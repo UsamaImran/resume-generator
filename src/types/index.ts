@@ -17,6 +17,14 @@ export interface ExperienceItem {
   bullets: string[];
 }
 
+export interface ProjectItem {
+  name: string;
+  repoUrl?: string;
+  liveUrl?: string;
+  stack?: string[];
+  bullets: string[];
+}
+
 export interface EducationItem {
   institution: string;
   degree: string;
@@ -44,6 +52,7 @@ export interface ResumeData {
   summary: string;
   skills: SkillCategory[];
   experience: ExperienceItem[];
+  projects?: ProjectItem[];
   education: EducationItem[];
   npmPackages?: string[];
 }
